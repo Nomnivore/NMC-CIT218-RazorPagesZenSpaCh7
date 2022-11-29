@@ -28,11 +28,14 @@ namespace RazorPages.Controllers
         [HttpGet]
         public IActionResult InquiryForm()
         {
+            ViewBag.Posted = false;
+            ViewData["ServicesID"] = new SelectList(_context.Services, "ID", "Classification");
             return View();
         }
         [HttpPost]
         public IActionResult InquiryForm(Contact model)
         {
+            ViewBag.Posted = true;
             return View(model);
         }
         public IActionResult Privacy()
