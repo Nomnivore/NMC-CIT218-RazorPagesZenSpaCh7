@@ -12,6 +12,7 @@ namespace RazorPages.Models
         public int ClientID { get; set; }
         public Client Client { get; set; }
         [ForeignKey("ServicesID")]
+        public int ServicesID { get; set; }
         public Services Services { get; set; }
         [DataType(DataType.Date)]
         public DateTime Date { get; set; } = DateTime.Now;
